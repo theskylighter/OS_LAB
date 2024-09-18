@@ -25,7 +25,15 @@ int main(){
         printf("\nEnter burst time : ");
         scanf("%d",&p[i].burstTime);
     }
-
+//bubble SORt Process
+    for(int i=0;i<n-1;i++){
+        for (int j = 0; j < n-1-i; j++)
+        {
+         if(p[j].burstTime>p[j+1].burstTime){
+swapProcess(p,j,j+1);
+        }
+    }
+ 
     int wait[n],turn[n];
     wait[0]=0;
     turn[0]=p[0].burstTime;
