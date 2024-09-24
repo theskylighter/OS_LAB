@@ -15,6 +15,9 @@ void* fun1(void* args) {
 }
 int main(int argc, char *argv[]) {
     pthread_t th[THREAD_NUM];
+
+// 0 = semaphore is shared bw the threads of same process 
+// 4 = maximum no of th that can access shared resource
     sem_init(&semaphore, 0, 4);
     int i;
     for (i = 0; i < THREAD_NUM; i++) {
