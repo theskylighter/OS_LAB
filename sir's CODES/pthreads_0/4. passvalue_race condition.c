@@ -12,11 +12,16 @@ void* fun1(void* arg) {
 int main(int argc, char* argv[]) {
     pthread_t th[10];
     int i,j;
+    // while(1){
+    // sleep(2);
+    printf("\n ");
+
     for (i = 0; i <10; i++) {
         if (pthread_create(&th[i], NULL, &fun1, &i) != 0) {
             printf("Failed to created thread");
         }
     }
+// }
     for (j = 0; j < 10; j++) {
         if (pthread_join(th[j], NULL) != 0) {
             printf("Failed to join thread");

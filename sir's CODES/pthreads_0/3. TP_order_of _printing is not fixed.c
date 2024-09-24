@@ -4,15 +4,16 @@
 #include <pthread.h>
 
 int x = 2;
+//global shared variable
 
 void* routine() {
+    // sleep(1);
     x += 5;
-    sleep(2);
     printf("Value of x: %d\n", x);
 }
 
 void* routine2() {
-    sleep(2);
+    // sleep(1);
     printf("Value of x: %d\n", x);
 }
 

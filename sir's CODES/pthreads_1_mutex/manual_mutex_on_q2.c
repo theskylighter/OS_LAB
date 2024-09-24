@@ -1,16 +1,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <pthread.h>
-int count = 0;
-int i;
-lock=0;
+
+// global variables
+    int count = 0;
+    int i;
+    lock=0;
+//-----------
+
 void* routine() {
     for (i = 0; i < 100000; i++) {
        if(lock==0)
         {
-        lock=1;
-        count++;
-        lock=0;
+            lock=1;
+            count++;
+            lock=0;
         }
     }
 }
@@ -29,6 +33,7 @@ int main(int argc, char* argv[]) {
     if (pthread_create(&p4, NULL, &routine, NULL) != 0) {
         return 4;
     }
+
     if (pthread_join(p1, NULL) != 0) {
         return 5;
     }
