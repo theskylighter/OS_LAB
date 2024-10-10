@@ -33,7 +33,7 @@ void *PrintHello(void *data)
 int main(int argc, char *argv[])
 {
     pthread_t thread_id; 
-    pthread_t thread_id2; 
+    pthread_t thread_id2;
     int t = 2024;         
     
     pthread_t mainThreadID=pthread_self() ;
