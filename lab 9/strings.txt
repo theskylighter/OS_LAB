@@ -1,0 +1,2 @@
+s1: Hello we are doing pthread testing with strings.
+s2: in
