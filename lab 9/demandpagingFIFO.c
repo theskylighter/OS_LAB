@@ -65,7 +65,7 @@ int main() {
     scanf("%d", &capacity);
 
     int result = pageFaultsFIFO(pages, n, capacity);
-    printf("Total page faults using FIFO: %d\n", result);
+    printf("\nTotal page faults using FIFO: %d\n", result);
 
     return 0;
 }
