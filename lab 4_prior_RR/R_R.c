@@ -46,7 +46,7 @@ int main() {
 
     printf("\n\nProcess\t|Turnaround Time|Waiting Time\n\n");
     int cnt;
-    for (t = 0, cnt = 0; remain != 0;) {
+    for (t = 0; remain != 0;) {
         int found = 0;
         for (int i = 0; i < n; i++) {
             if (processes[i].at <= t && processes[i].rt > 0) {
