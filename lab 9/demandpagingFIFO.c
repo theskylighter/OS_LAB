@@ -22,6 +22,7 @@ int pageFaultsFIFO(int pages[], int n, int capacity) {
     int front = 0; 
     int page_faults = 0;
 
+// initialize frames with -1
     for (int i = 0; i < capacity; i++) {
         frames[i] = -1;
     }
@@ -65,7 +66,7 @@ int main() {
     scanf("%d", &capacity);
 
     int result = pageFaultsFIFO(pages, n, capacity);
-    printf("\nTotal page faults using FIFO: %d\n", result);
+    printf("\n\nTotal page faults using FIFO: %d\n", result);
 
     return 0;
 }

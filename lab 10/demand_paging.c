@@ -59,6 +59,7 @@ int pageFaultsFIFO(int pages[], int n, int capacity) {
 int pageFaultsLRU(int pages[], int n, int capacity) {
     int frames[capacity];
     int used[capacity];
+    // stores last used time
     int page_faults = 0;
 
     // Initialize frames and used arrays
@@ -87,7 +88,8 @@ int pageFaultsLRU(int pages[], int n, int capacity) {
         if (!found) {
             int lru = 0;
             for (int j = 1; j < capacity; j++) {
-                if (used[j] < used[lru]) lru = j;  // Find the least recently used page
+                if (used[j] < used[lru]) 
+                    lru = j;  // Find the least recently used page's index
             }
             printf("\nPage %d not found, page %d replaced with page %d in LRU", page, frames[lru], page);
             frames[lru] = page;
@@ -144,6 +146,7 @@ int pageFaultsOptimal(int pages[], int n, int capacity) {
                 }
             }
             printf("\nPage %d not found, page %d replaced with page %d in Optimal", page, frames[replaceIndex], page);
+            // update the frame & page fault counter
             frames[replaceIndex] = page;
             page_faults++;
             printState(frames, capacity);

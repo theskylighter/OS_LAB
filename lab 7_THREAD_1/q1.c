@@ -5,8 +5,8 @@
 
 void* print_f(void* data){
     int num=*(int*)data;
-    int id = pthread_self();
-    printf("(%x)Thread %d executing...\n",id,num);
+    pthread_t id = pthread_self();
+    printf("(%lu)Thread %d executing...\n",id,num);
     // printf("%x",id);
 
     // printf("%s",pthread_self);

@@ -8,7 +8,7 @@
             "defines": [],
             "cStandard": "c17",
             "cppStandard": "gnu++17",
-            "compilerPath": "/usr/bin/g++"
+            "compilerPath": "C:/Users/shiva/scoop/apps/gcc/current/bin/g++.exe"
         }
     ],
     "version": 4

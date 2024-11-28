@@ -43,7 +43,7 @@ int withdrawal(int amount) {
 
 // Thread function for depositing money
 void* depositThread(void* arg) {
-    for (int i = 0; i < 5; i++) {  // Simulate multiple deposits
+    for (int i = 0; i < 20; i++) {  // Simulate multiple deposits
         deposit(500);  // Deposit 500
     }
     return NULL;
@@ -51,7 +51,7 @@ void* depositThread(void* arg) {
 
 // Thread function for withdrawing money
 void* withdrawThread(void* arg) {
-    for (int i = 0; i < 3; i++) {  // Simulate multiple withdrawals
+    for (int i = 0; i < 30; i++) {  // Simulate multiple withdrawals
         withdrawal(300);  // Withdraw 300
     }
     return NULL;
@@ -65,8 +65,8 @@ int main() {
     pthread_cond_init(&cond, NULL);
 
     // Create deposit and withdraw threads
-    pthread_create(&t1, NULL, depositThread, NULL);
     pthread_create(&t2, NULL, withdrawThread, NULL);
+    pthread_create(&t1, NULL, depositThread, NULL);
 
     // Wait for both threads to finish
     pthread_join(t1, NULL);

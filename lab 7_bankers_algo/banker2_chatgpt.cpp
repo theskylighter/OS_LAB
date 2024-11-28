@@ -99,6 +99,7 @@ int main() {
             p[i].need[k] = p[i].max_res[k]-p[i].curr_res[k];
         }
     }
+    
 
     
     vector<int> total(res);
